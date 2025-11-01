@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Job Application Tracker - Todo List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Job Application Tracker</h1>
+        <p class="lead">Add companies you applied to and update status (Applied → OA → Interview → Selected)</p>
+      </div>
+      <div class="meta">LocalStorage saved • Simple HTML/CSS/JS</div>
+    </header>
+
+    <div class="card">
+      <div class="controls">
+        <input id="companyInput" type="text" placeholder="Company name (e.g. Google)" />
+        <select id="statusInput" class="status-select">
+          <option value="applied">Applied</option>
+          <option value="oa">Online assessment done</option>
+          <option value="interview">Interview done</option>
+          <option value="selected">Selected</option>
+        </select>
+        <button id="addBtn">Add</button>
+        <button id="clearBtn" class="secondary">Clear All</button>
+      </div>
+
+      <table class="table" aria-live="polite">
+        <thead>
+          <tr>
+            <th style="width:48%">Company</th>
+            <th style="width:28%">Status</th>
+            <th style="width:24%">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="listBody">
+        </tbody>
+      </table>
+
+      <div id="empty" class="empty" style="display:none">No entries yet. Add a company to get started.</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
